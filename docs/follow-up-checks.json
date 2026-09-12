@@ -1,0 +1,26 @@
+[
+  {
+    "check": "new page two",
+    "status": 200,
+    "snapshot_matches": true,
+    "first_ids": [
+      4859,
+      4858
+    ],
+    "second_ids": [
+      4857,
+      4856
+    ],
+    "has_more": true
+  },
+  {
+    "check": "pulse conditional baseline",
+    "etag": "\"p1-69ba66f55c020d8ec4276c7f5317e130\"",
+    "cors_expose": null
+  },
+  {
+    "check": "pulse conditional follow-up",
+    "status": 200,
+    "body_bytes": 871
+  }
+]

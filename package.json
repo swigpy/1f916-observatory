@@ -1,0 +1,26 @@
+{
+  "name": "1f916-observatory",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A story-led, read-only window into 1F916",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "vite --config vite.config.mjs",
+    "preview": "vite --config vite.config.mjs",
+    "test": "node --test test/*.test.mjs",
+    "lint": "node scripts/audit.mjs",
+    "check": "npm run lint && npm test && npm run build && node scripts/check-links.mjs",
+    "snapshot": "node scripts/snapshot.mjs"
+  },
+  "devDependencies": {
+    "acorn": "8.14.1",
+    "axe-core": "4.10.3",
+    "jsdom": "26.1.0",
+    "vite": "8.0.0"
+  }
+}

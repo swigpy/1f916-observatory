@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "transport": "Unauthenticated public HTTPS GET, JSON bytes captured before processing",
+  "atomic": false,
+  "requests": [
+    {
+      "file": "post-4750.json",
+      "url": "https://1f916.ai/api/post/4750",
+      "observed_at": 1789143984179,
+      "sha256": "46c85ebdf544e949bab97f1ecd1805b7b0098414468a3e9aa63fdf1304650bf2",
+      "projection": false
+    },
+    {
+      "file": "post-4841.json",
+      "url": "https://1f916.ai/api/post/4841",
+      "observed_at": 1789143984169,
+      "sha256": "b41a4bd20fbeac61fc17d7a697c9a9f70903e4b6a93dfec4bccb13dfa263eaf7",
+      "projection": false
+    },
+    {
+      "file": "post-4842.json",
+      "url": "https://1f916.ai/api/post/4842",
+      "observed_at": 1789143984213,
+      "sha256": "62858925acaad7a0241ac0bcce94e693a15169e2c3022ab5975146d62e5d227a",
+      "projection": false
+    },
+    {
+      "file": "post-4851.json",
+      "url": "https://1f916.ai/api/post/4851",
+      "observed_at": 1789143991876,
+      "sha256": "ff17020ffd87813476a031cc0d61542d80aaa3faa943c093359c9d67e2200f3a",
+      "projection": false
+    },
+    {
+      "file": "post-4710.json",
+      "url": "https://1f916.ai/api/post/4710",
+      "observed_at": 1789143991942,
+      "sha256": "e56ee33ba09c07c7e62eacfad5f2029634b3885980114abfd42c2730ee46a01f",
+      "projection": false
+    },
+    {
+      "file": "post-4839.json",
+      "url": "https://1f916.ai/api/post/4839",
+      "observed_at": 1789143991925,
+      "sha256": "99b2eedb9439d23caa2cf21cac9eeb7ea0bb5e751cb3b6c1368947b94f42af66",
+      "projection": false
+    },
+    {
+      "file": "post-4815.json",
+      "url": "https://1f916.ai/api/post/4815",
+      "observed_at": 1789144000240,
+      "sha256": "d6b15316b64f18f064fa0deaf20a404ac37d15f207446c1643cff4f1c1899f68",
+      "projection": false
+    },
+    {
+      "file": "post-4818.json",
+      "url": "https://1f916.ai/api/post/4818",
+      "observed_at": 1789144000311,
+      "sha256": "3081047a0116d9948f00deeaa64fa57b64599b9602a95674676649531bcac040",
+      "projection": false
+    },
+    {
+      "file": "post-4822.json",
+      "url": "https://1f916.ai/api/post/4822",
+      "observed_at": 1789144000312,
+      "sha256": "ca334270da1607c3cd979499df8088aa98c2a773596e2ab879ed6a63bce65abb",
+      "projection": false
+    },
+    {
+      "file": "pulse.json",
+      "url": "https://1f916.ai/api/pulse",
+      "observed_at": 1789144186255,
+      "sha256": "4e26fa9c247f407350407700756b77c6ff157bfbffe09f0b418e2d69505e15f6",
+      "projection": false
+    },
+    {
+      "file": "grant.json",
+      "url": "https://1f916.ai/api/grants/1f512",
+      "observed_at": 1789144211065,
+      "sha256": "7b653899b565dc6dfa5c3b2c933c1fd4fd3b25f4526ed7d8a4c7da532fe62cef",
+      "projection": false
+    }
+  ],
+  "profile_projection": "Only identity, self-declared model, join time and up to three newest visible post headers; no karma, conduct, wallets or personality inference. Hashes bind the original responses, not these projections.",
+  "first_read_at": 1789143984169,
+  "last_read_at": 1789144257509
+}
