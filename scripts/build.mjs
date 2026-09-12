@@ -5,25 +5,25 @@ import { loadData, root } from './data.mjs';
 import { shell, home, dossier, citizen, method, CSP } from '../src/render.mjs';
 import { zip } from './zip.mjs';
 import { loadIndex } from './index-data.mjs';
-import { SORTS, PERIODS, TOPICS, indexPages } from '../src/explore.mjs';
+import { SORTS, PERIODS, TOPICS, indexPages, exploreStats } from '../src/explore.mjs';
 import { exploreView } from '../src/explore-render.mjs';
 const rootPath=fileURLToPath(root),out=join(rootPath,'dist');
 const {manifest,model,profiles,pulse}=loadData();
 rmSync(out,{recursive:true,force:true});mkdirSync(out,{recursive:true});
 const write=(path,body)=>{const p=join(out,path);mkdirSync(dirname(p),{recursive:true});writeFileSync(p,body);};
-const page=(path,title,description,body,base,active)=>write(path,shell({title,description,body,base,active,manifest,pulse}));
+const page=(path,title,description,body,base,active,observedAt)=>write(path,shell({title,description,body,base,active,manifest,pulse,observedAt}));
 page('index.html','A society, in three stories','Understand what AI citizens are building, debating and changing on 1F916. Three sourced stories, with the evidence in view.',home(model,manifest),'./','stories');
 for(const s of model.stories)page(`stories/${s.slug}/index.html`,s.title,s.deck,dossier(s,model,manifest),'../../','story');
 for(const p of profiles)page(`citizens/${p.handle}/index.html`,p.handle+' in context',`Public contributions by ${p.handle}, placed in the context of this observatory's selected stories.`,citizen(p,model,manifest,profiles),'../../','citizen');
 page('method/index.html','How we know','The sources, deterministic transformations and editorial choices behind this edition.',method(manifest,model),'../','method');
-const index=loadIndex();let exploreCount=0;
+const index=loadIndex(),stats=exploreStats(index.posts,index.manifest.as_of);let exploreCount=0;
 for(const topic of Object.keys(TOPICS))for(const sort of Object.keys(SORTS))for(const period of Object.keys(PERIODS)){
   const chunks=indexPages(index.posts,{topic,sort,period,asOf:index.manifest.as_of});
   const total=chunks.reduce((n,p)=>n+p.length,0);
   for(let i=0;i<chunks.length;i++){
-    const options={index,rows:chunks[i],total,pages:chunks.length,page:i+1,topic,sort,period,base:'../../../../../',model,profiles};
-    page(`explore/${topic}/${sort}/${period}/${i+1}/index.html`,`${TOPICS[topic]} · ${SORTS[sort]} · ${PERIODS[period]}`,`Explore captured public conversations by topic, sort and publication date.`,exploreView(options),options.base,'explore');exploreCount++;
-    if(topic==='all'&&sort==='hot'&&period==='week'&&i===0)page('explore/index.html','Explore the society','Look beyond the selected stories.',exploreView({...options,base:'../'}),'../','explore');
+    const options={index,rows:chunks[i],total,pages:chunks.length,page:i+1,topic,sort,period,base:'../../../../../',model,profiles,stats};
+    page(`explore/${topic}/${sort}/${period}/${i+1}/index.html`,`${TOPICS[topic]} · ${SORTS[sort]} · ${PERIODS[period]}`,`Explore captured public conversations by topic, sort and publication date.`,exploreView(options),options.base,'explore',index.manifest.as_of);exploreCount++;
+    if(topic==='all'&&sort==='hot'&&period==='week'&&i===0)page('explore/index.html','Explore the society','Look beyond the selected stories.',exploreView({...options,base:'../'}),'../','explore',index.manifest.as_of);
   }
 }
 write('evidence/index-manifest.json',JSON.stringify(index.manifest,null,2)+'\n');

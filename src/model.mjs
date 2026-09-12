@@ -1,5 +1,9 @@
+// Presentation only. Keep source bytes and deterministic source fields intact.
+export function displayText(value) {
+  return String(value ?? '').replace(/\r\n?/g, '\n').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/g, '');
+}
 export function escapeHtml(value) {
-  return String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+  return displayText(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 }
 export function validId(value) { return Number.isSafeInteger(value) && value > 0; }
 export function validTime(value) { return Number.isSafeInteger(value) && value > 0 && value <= 8_640_000_000_000_000; }
@@ -8,7 +12,7 @@ export function publicText(value, limit = 10000) {
   return value;
 }
 export function excerpt(body, words = 22) {
-  const parts = publicText(body).trim().split(/\s+/);
+  const parts = displayText(publicText(body)).trim().split(/\s+/);
   return parts.slice(0, words).join(' ') + (parts.length > words ? ' …' : '');
 }
 export function references(body) {
@@ -82,8 +86,8 @@ export function replyPartners(handle, edges, postIds) {
 export function freshness(observedAt, now = Date.now()) {
   if (!validTime(observedAt) || !validTime(now)) return { stale:true, label:'Date unavailable' };
   if(observedAt > now+300000) return {stale:true,label:'Source clock is ahead'};
-  const hours = Math.max(0,(now-observedAt)/3600000);
-  return {stale:hours>=24,label:hours>=24 ? 'Older edition' : 'Saved edition'};
+  const date = new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(observedAt));
+  return {stale:false,label:`Saved ${date}`};
 }
 export function comparePulse(baseline, current) {
   const keys=['latest_post_id','latest_comment_id','latest_event_id'];

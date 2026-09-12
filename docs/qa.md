@@ -1,5 +1,19 @@
 # Round 1 verification and review
 
+## Claude-review follow-up — 12 September
+
+The latest review decisions and remaining limitations are in [review-followup.md](review-followup.md). The earlier reports below describe historical builds.
+
+- 37 Node tests now include real-index regressions for the 117 NULs in post #2565, unchanged raw/projection validation, bidi controls, natural RTL text, actual topic counts and equal period results. New cases cover local title actions, external-reader path restrictions, explicit capture-budget/resume behavior, on-page provenance limits and computed border contrast from the rendered stylesheet.
+- Every generated HTML file is checked for unsafe display controls as well as local links. The build remains offline. The source/projection files were not refreshed or rewritten by these fixes.
+- Desktop browser: newcomer introduction, labelled filters and local preview disclosure inspected. Enter on a captured-preview summary opened it without changing the page URL. Mobile: topic caveat visibly present; 375px available width equals scroll width. This is a 390px layout fixture, not physical device emulation.
+- Fresh screenshots below show the current introduction and mobile caveat. `qa/desktop.jpg` farther below is explicitly a historical round-1 screenshot, not evidence of this build.
+- Static output remains 4,602 HTML files / 4,584 archive views, now about 306 MB on disk including local text previews. 316,789 local links/assets/anchors resolve. No output-size improvement, human comprehension result, Safari/iOS or full screen-reader conformance is claimed.
+
+![Current newcomer introduction](qa/review-home.jpg)
+
+![Current mobile filter caveat](qa/review-mobile.jpg)
+
 ## Private exploration iteration — 12 September
 
 The historical round-1 report below is retained. The repository now exists privately and the current change prepares a normal draft PR; consult its live check status for remote CI, rather than the historical delivery limitation.

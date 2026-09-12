@@ -4,10 +4,19 @@ import { createHash } from 'node:crypto';
 import { readPublic, sourceUrl } from '../src/read-api.mjs';
 import { indexPost } from '../src/explore.mjs';
 
-export async function collectIndex(read,save=()=>{}) {
+export const DEFAULT_PAGE_BUDGET=100;
+export function pageBudget(args=[]) {
+  if(!args.length)return DEFAULT_PAGE_BUDGET;
+  if(args.length!==1||!/^--max-pages=[1-9]\d{0,3}$/.test(args[0]))throw new Error('Use --max-pages=N (1–1000)');
+  const value=Number(args[0].split('=')[1]);
+  if(value>1000)throw new Error('Page budget must be 1–1000');
+  return value;
+}
+export async function collectIndex(read,save=()=>{},maxPages=DEFAULT_PAGE_BUDGET) {
+  if(!Number.isSafeInteger(maxPages)||maxPages<1||maxPages>1000)throw new Error('Invalid page budget');
   const posts=new Map(),requests=[];let cursor={},snapshot,pins,boardTotal,firstTime,lastTime;
   const seenCursors=new Set();
-  for(let page=1;page<=100;page++) {
+  for(let page=1;page<=maxPages;page++) {
     const result=await read('newest',cursor),d=result.data;
     if(!Array.isArray(d.posts)||typeof d.has_more!=='boolean'||!Number.isSafeInteger(d.now)||!Number.isSafeInteger(d.snapshot_id)||typeof d.pin_snapshot!=='string'||!Number.isSafeInteger(d.board_total))throw new Error('Invalid archive page');
     if(page===1){snapshot=d.snapshot_id;pins=d.pin_snapshot;boardTotal=d.board_total;firstTime=d.now;}
@@ -25,9 +34,10 @@ export async function collectIndex(read,save=()=>{}) {
     if(typeof d.next_before!=='string'||seenCursors.has(d.next_before))throw new Error('Non-advancing archive cursor');
     seenCursors.add(d.next_before);cursor={before:d.next_before,snapshot_id:snapshot,pin_snapshot:pins};
   }
-  throw new Error('Archive exceeded the bounded 100-page budget');
+  throw new Error(`Archive exceeded the bounded ${maxPages}-page budget; capture is incomplete. Review the request and hosting budget, then resume explicitly with --max-pages=N.`);
 }
 if(process.argv[1]?.endsWith('/capture-index.mjs')) {
+  const maxPages=pageBudget(process.argv.slice(2));
   const dir=new URL('../.sites-runtime/index-candidate/',import.meta.url);
   if(existsSync(new URL('manifest.json',dir)))throw new Error('Existing capture requires a reviewed replacement; do not overwrite');
   mkdirSync(new URL('raw/',dir),{recursive:true});
@@ -38,7 +48,7 @@ if(process.argv[1]?.endsWith('/capture-index.mjs')) {
     // Pace the history walk. A 429 stops it; resume explicitly after waiting.
     await new Promise(resolve=>setTimeout(resolve,5000));
     const r=await readPublic(kind,key);console.log(`Read page at ${r.data.next_before??'end'}; ${r.data.posts?.length} rows`);return r;
-  },(file,bytes)=>{const path=new URL(`raw/${file}`,dir);if(!existsSync(path))writeFileSync(path,bytes,{flag:'wx'});});
+  },(file,bytes)=>{const path=new URL(`raw/${file}`,dir);if(!existsSync(path))writeFileSync(path,bytes,{flag:'wx'});},maxPages);
   const {posts,...manifest}=result;
   const bytes=Buffer.from(JSON.stringify(posts)+'\n');
   manifest.projection_sha256=createHash('sha256').update(bytes).digest('hex');

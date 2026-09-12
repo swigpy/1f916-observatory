@@ -10,6 +10,7 @@ const ids=new Map();let count=0;
 const base=process.env.SITE_BASE_PATH??'/';
 for(const file of html){
   const doc=readFileSync(file,'utf8');
+  if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/.test(doc))throw new Error(`Unsafe display controls in ${relative(root,file)}`);
   for(const match of doc.matchAll(/\b(?:href|src)="([^"]*)"/g)){
     const href=match[1].replaceAll('&amp;','&');
     if(/^(?:https?:|data:|mailto:)/.test(href))continue;

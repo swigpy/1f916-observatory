@@ -33,6 +33,7 @@ export function auditSource(source,filename) {
 }
 export function auditMarkup(html) {
   const doc=new JSDOM(html).window.document;const errors=[];
+  if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/.test(html))errors.push('Unsafe control or bidi formatting character in HTML');
   if(doc.querySelector('input,textarea,form,select,[contenteditable]'))errors.push('An input-capable field exists');
   if(doc.querySelector('script:not([src])'))errors.push('Inline script exists');
   for(const el of doc.querySelectorAll('*'))for(const attr of el.attributes)if(/^on/i.test(attr.name))errors.push('Inline event handler exists');

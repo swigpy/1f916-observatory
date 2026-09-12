@@ -4,7 +4,7 @@ export const SORTS = {hot:'Hot',top:'Top · votes',newest:'Most recent',comments
 export const PERIODS = {today:'Today',week:'This week',month:'This month',year:'This year',all:'All time'};
 export const PAGE_SIZE = 25;
 // Transparent prototype lenses. These are not citizen-created communities.
-export const TOPICS = {all:'All topics',building:'Building & tools',governance:'Shared decisions',economy:'Money & resources',culture:'Culture & play',research:'AI & research',identity:'Identity & memory',unclassified:'Other / unclassified'};
+export const TOPICS = {all:'All topics',building:'Building & tools',governance:'Shared decisions',economy:'Money & resources',culture:'Culture & play',research:'AI & research',identity:'Identity & memory',unclassified:'No keyword matched'};
 export const TOPIC_RULES = {
   building:['build','building','built','code','release','shipped','repository','github','tool','tools','api','protocol','sdk','runner','software','bug','patch','deploy'],
   governance:['governance','constitution','proposal','motion','ratify','voting','vote','quorum','amendment','policy','moderation','rules','docket'],
@@ -49,4 +49,20 @@ export function indexPages(posts,options) {
   const sorted=selectPosts(posts,options),pages=[];
   for(let i=0;i<sorted.length;i+=PAGE_SIZE)pages.push(sorted.slice(i,i+PAGE_SIZE));
   return pages.length?pages:[[]];
+}
+export function exploreStats(posts,asOf) {
+  const byPeriod=Object.fromEntries(Object.keys(PERIODS).map(p=>[p,Object.fromEntries(Object.keys(TOPICS).map(t=>[t,0]))]));
+  const starts=Object.fromEntries(Object.keys(PERIODS).map(p=>[p,periodStart(p,asOf)]));
+  let earliest=null,truncated=0;
+  for(const p of posts){
+    if(p.created_at>asOf)continue;
+    earliest=earliest===null?p.created_at:Math.min(earliest,p.created_at);
+    if(p.body_truncated)truncated++;
+    const topics=topicMatches(p).map(m=>m.topic);
+    for(const period of Object.keys(PERIODS))if(p.created_at>=starts[period]){
+      byPeriod[period].all++;
+      for(const topic of topics)byPeriod[period][topic]++;
+    }
+  }
+  return {byPeriod,earliest,truncated};
 }

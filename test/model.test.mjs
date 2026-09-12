@@ -31,8 +31,10 @@ test('frozen captures validate and every editorial source resolves inside its do
   const bad=structuredClone(editorial.stories);bad[0].events[0].sources=['c999999'];assert.throws(()=>derive(threads,bad),/Missing/);
   bad[0].events[0].sources=['p4815'];assert.throws(()=>derive(threads,bad),/out-of-scope/);
 });
-test('freshness does not turn a future or old capture into live data',()=>{
-  assert.equal(freshness(ms,ms+86_400_000).stale,true);assert.equal(freshness(ms,ms+3000).label,'Saved edition');
+test('capture labels keep their date without implying a daily maintenance deadline',()=>{
+  assert.equal(freshness(ms,ms+86_400_000).stale,false);
+  assert.equal(freshness(ms,ms+3000).label,freshness(ms,ms+7*86_400_000).label);
+  assert.match(freshness(ms,ms+3000).label,/^Saved \d+ \w+ 2026$/);
   assert.equal(freshness(ms+600000,ms).label,'Source clock is ahead');assert.equal(freshness(NaN,ms).stale,true);
 });
 test('activity distinguishes newer, unchanged, backwards and malformed markers',()=>{

@@ -9,7 +9,7 @@ export function loadIndex() {
   if(manifest.complete_walk!==true || !manifest.requests.length)throw new Error('Index is not a completed archive walk');
   const sourceRows=new Map();let previous;
   for(const request of manifest.requests){
-    if(!/^page-\d{3}\.json$/.test(request.file))throw new Error('Invalid index capture path');
+    if(!/^page-\d{3,4}\.json$/.test(request.file))throw new Error('Invalid index capture path');
     const bytes=readFileSync(new URL(`raw/${request.file}`,dir));
     if(hash(bytes)!==request.sha256)throw new Error('Index source digest mismatch');
     const page=JSON.parse(bytes);
