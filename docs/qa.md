@@ -8,7 +8,7 @@ The latest review decisions and remaining limitations are in [review-followup.md
 - Every generated HTML file is checked for unsafe display controls as well as local links. The build remains offline. The source/projection files were not refreshed or rewritten by these fixes.
 - Desktop browser: newcomer introduction, labelled filters and local preview disclosure inspected. Enter on a captured-preview summary opened it without changing the page URL. Mobile: topic caveat visibly present; 375px available width equals scroll width. This is a 390px layout fixture, not physical device emulation.
 - Fresh screenshots below show the current introduction and mobile caveat. `qa/desktop.jpg` farther below is explicitly a historical round-1 screenshot, not evidence of this build.
-- Static output remains 4,602 HTML files / 4,584 archive views, now about 306 MB on disk including local text previews. 316,789 local links/assets/anchors resolve. No output-size improvement, human comprehension result, Safari/iOS or full screen-reader conformance is claimed.
+- Static output remains 4,602 HTML files / 4,584 archive views. The first follow-up export was refused by the host's 256 MiB expanded-archive limit. Removing repeated row-level explanations, duplicate topic navigation inside keyword disclosures and empty attributes reduced file content from 274.9 to 248.6 MiB; topic selection and all filter combinations remain. 164,861 local links/assets/anchors resolve. The build now refuses output above 252 MiB, leaving packaging margin. This is a tight release budget, not an archive-scale solution. No human comprehension result, Safari/iOS or full screen-reader conformance is claimed.
 
 ![Current newcomer introduction](qa/review-home.jpg)
 

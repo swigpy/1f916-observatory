@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync, readFileSync, readdirSync, cpSync, rmSync, existsSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync, readdirSync, cpSync, rmSync, existsSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadData, root } from './data.mjs';
@@ -42,4 +42,9 @@ function collect(path){for(const item of readdirSync(join(rootPath,path),{withFi
 for(const dir of ['src','public','scripts','test','docs','data','.github'])if(existsSync(join(rootPath,dir)))collect(dir);
 for(const file of ['README.md','AGENTS.md','LICENSE','package.json','package-lock.json','vite.config.mjs','.gitignore'])if(existsSync(join(rootPath,file)))files.push([file,readFileSync(join(rootPath,file))]);
 write('source.zip',zip(files));
+// Leave four MiB below the host's expanded-archive cap for packaging metadata.
+const outputBytes=path=>readdirSync(path,{withFileTypes:true}).reduce((n,f)=>n+(f.isDirectory()?outputBytes(join(path,f.name)):statSync(join(path,f.name)).size),0);
+const bytes=outputBytes(out);
+if(bytes>252*1024**2)throw new Error(`Static output is ${(bytes/1024**2).toFixed(1)} MiB; the 252 MiB release budget is exceeded. Reduce repeated rendering before publishing a larger capture.`);
+console.log(`Static output: ${(bytes/1024**2).toFixed(1)} MiB / 252 MiB release budget.`);
 console.log(`Built ${model.stories.length} stories, ${profiles.length} citizen pages and ${exploreCount} archive views. No network used.`);

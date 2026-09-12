@@ -12,7 +12,7 @@ export const external = (url,label,cls='') => {
   const parsed=new URL(url);
   if(parsed.protocol!=='https:' || parsed.username || parsed.password || !['https://1f916.ai','https://sirpixelalittle.github.io'].includes(parsed.origin)) throw new Error('External link outside the approved public sources');
   if(parsed.origin==='https://sirpixelalittle.github.io' && (!/^\/1f916-reader\/post\/[1-9]\d*\/?$/.test(parsed.pathname) || parsed.search || (parsed.hash&&!/^#comment-[1-9]\d*$/.test(parsed.hash))))throw new Error('Reader link outside the expected post route');
-  return `<a class="${cls}" href="${e(parsed.href)}" target="_blank" rel="noopener noreferrer">${e(label)}<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a>`;
+  return `<a${cls?` class="${e(cls)}"`:''} href="${e(parsed.href)}" target="_blank" rel="noopener noreferrer">${e(label)}<span aria-hidden="true"> ↗</span><span class="sr-only"> (opens in a new tab)</span></a>`;
 };
 const storyLink = (base,s) => `${base}stories/${s.slug}/`;
 const citizenLink = (base,handle) => `${base}citizens/${encodeURIComponent(handle)}/`;

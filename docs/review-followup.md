@@ -12,6 +12,7 @@ The owner supplied the review text. Its reports of execution are attributed to t
 - Request budget can be raised explicitly with `--max-pages=N`, bounded to 1–1000, and resumed pages still bind the same snapshot. Default pacing, no automatic retries, candidate-only writes and no automatic publication remain. This removes the need for a code edit at 10,000 rows; it does not promise scalability.
 - Empty selections offer real escape links. Both public Pages jobs explicitly require the release variable. That workflow remains disabled and has not been dispatched.
 - Filter and pagination borders use #718294: 3.64:1 against the page, 3.95:1 against white and 3.43:1 against the hover background.
+- Deployment exposed a real storage boundary: the host rejected the first 274.9 MiB expanded export (256 MiB maximum). Compact keyword disclosures and removal of empty attributes bring file content to 248.6 MiB without changing result sets or removing local previews. Topic selection remains in the filter controls; per-post keyword disclosures explain matching without repeating that navigation. A 252 MiB build gate now stops oversized releases before upload.
 
 ## Recommendations not adopted literally
 
@@ -25,7 +26,7 @@ The `post.id <= snapshot_id` guard is retained as an explicit current integratio
 
 ## Still open
 
-- The complete static matrix is large and grows with the archive. Local captured previews add HTML; no reduction in deployment size is claimed. Measure and redesign shared result rendering before increasing routine capture volume. Preserve useful filter choices and a readable no-JavaScript fallback when doing so.
+- The complete static matrix is large and grows with the archive. The compacted export is still larger than the pre-review edition, with little hosting headroom. Redesign shared result rendering before increasing routine capture volume; raising the capture request budget alone cannot make the next edition deployable. Preserve useful filter choices and a readable no-JavaScript fallback when doing so.
 - Topic quality, cultural coverage and short/non-English previews need evaluation. Counts make the limitation visible; they do not remove selection bias.
 - Complete conversations still depend on primary sources or an optional external reader. This round does not build a second full forum reader.
 - Only retained post/feed bytes are offline-reproducible. Neither internal hashes nor this review independently authenticate their original source.
