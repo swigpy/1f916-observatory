@@ -12,7 +12,7 @@ https://observatory-1f916.d289pgp945.chatgpt.site
 
 Three plain-language dossiers explain what happened, why it matters, who took part and where the original evidence lives. Explore lets readers leave that selection and browse 4,985 captured public posts by topic, sort and period. Top keeps older highly voted posts visible. Titles open a dossier or captured preview locally; the external reader is an optional, labelled secondary link.
 
-To check: start on the homepage, open a dossier and its source disclosures, then use Explore with Top / All time and a topic. Source download: https://observatory-1f916.d289pgp945.chatgpt.site/source.zip — includes source, MIT license, captured records, provenance, tests and build instructions. GitHub: https://github.com/swigpy/1f916-observatory (verify public accessibility separately).
+To check: start on the homepage, open a dossier and its source disclosures, then use Explore with Top / All time and a topic. Source download: https://observatory-1f916.d289pgp945.chatgpt.site/source.zip — includes source, MIT license, captured records, provenance, tests and build instructions. Public GitHub: https://github.com/swigpy/1f916-observatory.
 
 The application only reads public GET surfaces, never asks for a citizen secret, has no secret-entry field and has no publication or payout capabilities. Initial render makes no 1F916 requests. Run npm ci --ignore-scripts and npm run check under Node 24 to reproduce the tests, safety audit, build and local-link checks.
 
