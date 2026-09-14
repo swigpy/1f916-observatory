@@ -1,0 +1,1013 @@
+{
+  "boundary": {
+    "calibration_citizens": 668,
+    "high_ms": 13911,
+    "low_ms": 1203,
+    "ratio": 11.563591022443891,
+    "threshold_ms": 4090.835244788037,
+    "top_gaps": [
+      {
+        "high_ms": 13911,
+        "low_ms": 1203,
+        "ratio": 11.563591022443891
+      },
+      {
+        "high_ms": 18389547,
+        "low_ms": 9377879,
+        "ratio": 1.960949485486004
+      },
+      {
+        "high_ms": 71137310,
+        "low_ms": 46093433,
+        "ratio": 1.5433285257793665
+      },
+      {
+        "high_ms": 1008341956,
+        "low_ms": 693359432,
+        "ratio": 1.45428461698636
+      },
+      {
+        "high_ms": 31082005,
+        "low_ms": 22142827,
+        "ratio": 1.4037053624634288
+      },
+      {
+        "high_ms": 138389246,
+        "low_ms": 101372686,
+        "ratio": 1.3651531932378709
+      },
+      {
+        "high_ms": 1203,
+        "low_ms": 909,
+        "ratio": 1.3234323432343233
+      },
+      {
+        "high_ms": 693359432,
+        "low_ms": 532141303,
+        "ratio": 1.3029611272252626
+      },
+      {
+        "high_ms": 7678732,
+        "low_ms": 5927495,
+        "ratio": 1.2954430159789254
+      },
+      {
+        "high_ms": 17174,
+        "low_ms": 13911,
+        "ratio": 1.2345625763784056
+      }
+    ],
+    "unique_positive_delays": 462,
+    "zero_delays": 0
+  },
+  "falsifier": {
+    "door-none": {
+      "familywise_direction_resolved": false,
+      "pointwise_direction_resolved": true,
+      "pre_specified_direction_rule_met": true,
+      "pre_window_same_sign": true
+    },
+    "door-sought": {
+      "familywise_direction_resolved": true,
+      "pointwise_direction_resolved": true,
+      "pre_specified_direction_rule_met": true,
+      "pre_window_same_sign": true
+    },
+    "sought-none": {
+      "familywise_direction_resolved": true,
+      "pointwise_direction_resolved": true,
+      "pre_specified_direction_rule_met": true,
+      "pre_window_same_sign": true
+    }
+  },
+  "input_hashes": {
+    "changes.json": "e14ec79f2f5e3ecef3cd963e4d8bf4aa35484d02276e2220f1f5717dfba0ee9a",
+    "citizens.json": "7cab81235d4232ee996f9469c7d71073ad42b955635c07268f030680fc499909",
+    "events.json": "c162c3ed244d44420c618fd5db0301f62b848a2a11371eb5dc05d0d645a1c612",
+    "listing39.json": "a3eca7a4db0fbfd1941b828fd570b4f116aedd36cc3bbc78d0a4c282ea83e244",
+    "pulse-after.json": "34399ccf5bd0ec989f47da78a16d72a60513dabba504cc7e24d314d201a500d0",
+    "references.json": "eceb93770f380fb01c580d60893fc6ae95f67977dedd683669c99e089d98b65b",
+    "stats-after.json": "b4b06d07c08948f12c84030be8278f3af4985bd63f64c029f3e84892684f98c7",
+    "stats-before.json": "a57700ca13f5af3203e87c7bdd3d115457d5ff5be5cbaece9302e23591562309"
+  },
+  "observation": "2026-09-14T00:00:00.000Z",
+  "population_cutoff": "2026-08-31T00:00:00.000Z",
+  "population_start": "2026-08-12T21:33:32.000Z",
+  "primary": {
+    "arms": {
+      "door": {
+        "interval": [
+          0.17816371380446128,
+          0.26538608368449806
+        ],
+        "n": 343,
+        "rate": 0.21865889212827988,
+        "retained": 75
+      },
+      "none": {
+        "interval": [
+          0.14093883862788514,
+          0.18806286932513877
+        ],
+        "n": 944,
+        "rate": 0.163135593220339,
+        "retained": 154
+      },
+      "sought": {
+        "interval": [
+          0.3819068047183386,
+          0.5431824712372215
+        ],
+        "n": 143,
+        "rate": 0.46153846153846156,
+        "retained": 66
+      }
+    },
+    "differences": {
+      "door-none": {
+        "difference": 0.05552329890794089,
+        "familywise95_interval": [
+          -0.0019896445283649963,
+          0.1192216675912247
+        ],
+        "interval": [
+          0.007970921875001827,
+          0.10725458871564941
+        ]
+      },
+      "door-sought": {
+        "difference": -0.24287956941018168,
+        "familywise95_interval": [
+          -0.3534667468982747,
+          -0.13048276686802418
+        ],
+        "interval": [
+          -0.3340146547899029,
+          -0.15055064003997104
+        ]
+      },
+      "sought-none": {
+        "difference": 0.29840286831812257,
+        "familywise95_interval": [
+          0.19721110534553765,
+          0.40129115242659563
+        ],
+        "interval": [
+          0.21496085335010567,
+          0.3830104343753543
+        ]
+      }
+    },
+    "n": 1430
+  },
+  "sensitivity": {
+    "alternate_days_8_to_15": {
+      "arms": {
+        "door": {
+          "interval": [
+            0.17542966862463802,
+            0.26290645168571436
+          ],
+          "n": 338,
+          "rate": 0.21597633136094674,
+          "retained": 73
+        },
+        "none": {
+          "interval": [
+            0.13215191719979824,
+            0.17855624878063975
+          ],
+          "n": 929,
+          "rate": 0.15392895586652314,
+          "retained": 143
+        },
+        "sought": {
+          "interval": [
+            0.3847643948333296,
+            0.5466679970196991
+          ],
+          "n": 142,
+          "rate": 0.4647887323943662,
+          "retained": 66
+        }
+      },
+      "differences": {
+        "door-none": {
+          "difference": 0.0620473754944236,
+          "familywise95_interval": [
+            0.0046829093209145994,
+            0.12577068867693217
+          ],
+          "interval": [
+            0.01460756715448968,
+            0.11378397382470812
+          ]
+        },
+        "door-sought": {
+          "difference": -0.24881240103341945,
+          "familywise95_interval": [
+            -0.35965259202353844,
+            -0.13585567218573547
+          ],
+          "interval": [
+            -0.3401811365759302,
+            -0.15604208899460015
+          ]
+        },
+        "sought-none": {
+          "difference": 0.310859776527843,
+          "familywise95_interval": [
+            0.20930390424450823,
+            0.4138641415109362
+          ],
+          "interval": [
+            0.22713165605233948,
+            0.39558553051491196
+          ]
+        }
+      },
+      "n": 1409
+    },
+    "alternate_days_excluded_without_15day_followup": 21,
+    "cohort_only_boundary": {
+      "boundary": {
+        "high_ms": 18424,
+        "low_ms": 1203,
+        "ratio": 15.315045719035744,
+        "threshold_ms": 4707.873405264844,
+        "top_gaps": [
+          {
+            "high_ms": 18424,
+            "low_ms": 1203,
+            "ratio": 15.315045719035744
+          },
+          {
+            "high_ms": 19459564,
+            "low_ms": 9377879,
+            "ratio": 2.075049592770391
+          },
+          {
+            "high_ms": 71137310,
+            "low_ms": 46093433,
+            "ratio": 1.5433285257793665
+          },
+          {
+            "high_ms": 1008341956,
+            "low_ms": 693359432,
+            "ratio": 1.45428461698636
+          },
+          {
+            "high_ms": 7678732,
+            "low_ms": 5294712,
+            "ratio": 1.4502643392124066
+          },
+          {
+            "high_ms": 410442432,
+            "low_ms": 289394929,
+            "ratio": 1.418277899402999
+          },
+          {
+            "high_ms": 31082005,
+            "low_ms": 22142827,
+            "ratio": 1.4037053624634288
+          },
+          {
+            "high_ms": 35,
+            "low_ms": 25,
+            "ratio": 1.4
+          },
+          {
+            "high_ms": 263848730,
+            "low_ms": 192587463,
+            "ratio": 1.370020280084379
+          },
+          {
+            "high_ms": 138389246,
+            "low_ms": 101372686,
+            "ratio": 1.3651531932378709
+          }
+        ],
+        "unique_positive_delays": 364
+      },
+      "result": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.17816371380446128,
+              0.26538608368449806
+            ],
+            "n": 343,
+            "rate": 0.21865889212827988,
+            "retained": 75
+          },
+          "none": {
+            "interval": [
+              0.14093883862788514,
+              0.18806286932513877
+            ],
+            "n": 944,
+            "rate": 0.163135593220339,
+            "retained": 154
+          },
+          "sought": {
+            "interval": [
+              0.3819068047183386,
+              0.5431824712372215
+            ],
+            "n": 143,
+            "rate": 0.46153846153846156,
+            "retained": 66
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.05552329890794089,
+            "familywise95_interval": [
+              -0.0019896445283649963,
+              0.1192216675912247
+            ],
+            "interval": [
+              0.007970921875001827,
+              0.10725458871564941
+            ]
+          },
+          "door-sought": {
+            "difference": -0.24287956941018168,
+            "familywise95_interval": [
+              -0.3534667468982747,
+              -0.13048276686802418
+            ],
+            "interval": [
+              -0.3340146547899029,
+              -0.15055064003997104
+            ]
+          },
+          "sought-none": {
+            "difference": 0.29840286831812257,
+            "familywise95_interval": [
+              0.19721110534553765,
+              0.40129115242659563
+            ],
+            "interval": [
+              0.21496085335010567,
+              0.3830104343753543
+            ]
+          }
+        },
+        "n": 1430
+      }
+    },
+    "cutoffs": {
+      "2026-08-28T00:00:00Z": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.17145581075490743,
+              0.2594117613220263
+            ],
+            "n": 330,
+            "rate": 0.21212121212121213,
+            "retained": 70
+          },
+          "none": {
+            "interval": [
+              0.14354611540859652,
+              0.1931031762253121
+            ],
+            "n": 869,
+            "rate": 0.1668584579976985,
+            "retained": 145
+          },
+          "sought": {
+            "interval": [
+              0.3661914968022998,
+              0.532242543871839
+            ],
+            "n": 134,
+            "rate": 0.44776119402985076,
+            "retained": 60
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.04526275412351363,
+            "familywise95_interval": [
+              -0.013273514100187032,
+              0.11019878843665647
+            ],
+            "interval": [
+              -0.00313621387302003,
+              0.09798714469093778
+            ]
+          },
+          "door-sought": {
+            "difference": -0.23563998190863863,
+            "familywise95_interval": [
+              -0.3494680319728805,
+              -0.12097566515016203
+            ],
+            "interval": [
+              -0.3293991059414871,
+              -0.14135312413138018
+            ]
+          },
+          "sought-none": {
+            "difference": 0.28090273603215227,
+            "familywise95_interval": [
+              0.17711488850029278,
+              0.3875377705836375
+            ],
+            "interval": [
+              0.19521492627696496,
+              0.36854156183508086
+            ]
+          }
+        },
+        "n": 1333
+      },
+      "2026-08-30T00:00:00Z": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.17814315541206976,
+              0.2660436303117164
+            ],
+            "n": 338,
+            "rate": 0.21893491124260356,
+            "retained": 74
+          },
+          "none": {
+            "interval": [
+              0.14122273363738433,
+              0.18878131572151727
+            ],
+            "n": 929,
+            "rate": 0.16361679224973089,
+            "retained": 152
+          },
+          "sought": {
+            "interval": [
+              0.37799409377264337,
+              0.5397247764509912
+            ],
+            "n": 142,
+            "rate": 0.45774647887323944,
+            "retained": 65
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.05531811899287267,
+            "familywise95_interval": [
+              -0.0026478954156572768,
+              0.11954627465724663
+            ],
+            "interval": [
+              0.007388789920790145,
+              0.10747869101298965
+            ]
+          },
+          "door-sought": {
+            "difference": -0.23881156763063588,
+            "familywise95_interval": [
+              -0.3499384120653789,
+              -0.1260709621500133
+            ],
+            "interval": [
+              -0.3303779840587363,
+              -0.1461850361098757
+            ]
+          },
+          "sought-none": {
+            "difference": 0.2941296866235086,
+            "familywise95_interval": [
+              0.19273786368337742,
+              0.39749423732947475
+            ],
+            "interval": [
+              0.2105013650404715,
+              0.3791116560928003
+            ]
+          }
+        },
+        "n": 1409
+      }
+    },
+    "end_outcome_binding_status": {
+      "arms": {
+        "door": {
+          "interval": [
+            0.17816371380446128,
+            0.26538608368449806
+          ],
+          "n": 343,
+          "rate": 0.21865889212827988,
+          "retained": 75
+        },
+        "none": {
+          "interval": [
+            0.14246903273450212,
+            0.18970144204940637
+          ],
+          "n": 947,
+          "rate": 0.16473072861668428,
+          "retained": 156
+        },
+        "sought": {
+          "interval": [
+            0.3768699173117245,
+            0.5397048998627966
+          ],
+          "n": 140,
+          "rate": 0.45714285714285713,
+          "retained": 64
+        }
+      },
+      "differences": {
+        "door-none": {
+          "difference": 0.0539281635115956,
+          "familywise95_interval": [
+            -0.003611468157689847,
+            0.11766091128971896
+          ],
+          "interval": [
+            0.006353001958354448,
+            0.10568735143299052
+          ]
+        },
+        "door-sought": {
+          "difference": -0.23848396501457725,
+          "familywise95_interval": [
+            -0.350094227423939,
+            -0.12545983935851387
+          ],
+          "interval": [
+            -0.3304423815166407,
+            -0.145601376227097
+          ]
+        },
+        "sought-none": {
+          "difference": 0.2924121285261728,
+          "familywise95_interval": [
+            0.1905089627164396,
+            0.3964203340848104
+          ],
+          "interval": [
+            0.20834500416431678,
+            0.37792279453714406
+          ]
+        }
+      },
+      "n": 1430
+    },
+    "pre_outcome_binding_status": {
+      "arms": {
+        "door": {
+          "interval": [
+            0.17816371380446128,
+            0.26538608368449806
+          ],
+          "n": 343,
+          "rate": 0.21865889212827988,
+          "retained": 75
+        },
+        "none": {
+          "interval": [
+            0.14581374310737635,
+            0.19334356497669483
+          ],
+          "n": 951,
+          "rate": 0.16824395373291273,
+          "retained": 160
+        },
+        "sought": {
+          "interval": [
+            0.3604814617168842,
+            0.5251032558988312
+          ],
+          "n": 136,
+          "rate": 0.4411764705882353,
+          "retained": 60
+        }
+      },
+      "differences": {
+        "door-none": {
+          "difference": 0.05041493839536715,
+          "familywise95_interval": [
+            -0.007205966052449421,
+            0.11423645645699994
+          ],
+          "interval": [
+            0.0027719960841825764,
+            0.10224682799470003
+          ]
+        },
+        "door-sought": {
+          "difference": -0.2225175784599554,
+          "familywise95_interval": [
+            -0.33571804393844185,
+            -0.10916942719722914
+          ],
+          "interval": [
+            -0.315703225209059,
+            -0.12926997855797973
+          ]
+        },
+        "sought-none": {
+          "difference": 0.27293251685532255,
+          "familywise95_interval": [
+            0.1706243303150773,
+            0.3786988846729264
+          ],
+          "interval": [
+            0.1884240856704022,
+            0.3598049500046064
+          ]
+        }
+      },
+      "n": 1430
+    },
+    "prior_window_comparison_note": "Expanded-window comparisons use writing observed at collection, whose first changes page is after every included 14-day endpoint; they are not the primary midnight-observation cohort. Bind classification is still frozen at primary observation; no primary cohort citizen changed binding arm between observation and collection.",
+    "registration_periods": {
+      "Aug 12-18": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.11721378644576921,
+              0.5464908432989318
+            ],
+            "n": 14,
+            "rate": 0.2857142857142857,
+            "retained": 4
+          },
+          "none": {
+            "interval": [
+              0.08007685016780322,
+              0.2752408517641014
+            ],
+            "n": 52,
+            "rate": 0.15384615384615385,
+            "retained": 8
+          },
+          "sought": {
+            "interval": [
+              0.30116980025498397,
+              0.7519046463426261
+            ],
+            "n": 15,
+            "rate": 0.5333333333333333,
+            "retained": 8
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.13186813186813184,
+            "familywise95_interval": [
+              -0.11142201614397987,
+              0.45657030455187403
+            ],
+            "interval": [
+              -0.07580731428843493,
+              0.4028779530017708
+            ]
+          },
+          "door-sought": {
+            "difference": -0.24761904761904763,
+            "familywise95_interval": [
+              -0.5636589369546698,
+              0.16725615695148022
+            ],
+            "interval": [
+              -0.523600635998319,
+              0.10152894260446788
+            ]
+          },
+          "sought-none": {
+            "difference": 0.37948717948717947,
+            "familywise95_interval": [
+              0.0676224685212049,
+              0.6464343260452825
+            ],
+            "interval": [
+              0.11750134251500349,
+              0.6101716588866288
+            ]
+          }
+        },
+        "n": 81
+      },
+      "Aug 19-25": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.15117895036219134,
+              0.24052723030398251
+            ],
+            "n": 297,
+            "rate": 0.1919191919191919,
+            "retained": 57
+          },
+          "none": {
+            "interval": [
+              0.14625336805468034,
+              0.20107429892017856
+            ],
+            "n": 727,
+            "rate": 0.171939477303989,
+            "retained": 125
+          },
+          "sought": {
+            "interval": [
+              0.3421290740356541,
+              0.5249410599668218
+            ],
+            "n": 109,
+            "rate": 0.43119266055045874,
+            "retained": 47
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.019979714615202898,
+            "familywise95_interval": [
+              -0.04057500876504633,
+              0.08776443753997477
+            ],
+            "interval": [
+              -0.030106262591296146,
+              0.07495714274697983
+            ]
+          },
+          "door-sought": {
+            "difference": -0.23927346863126683,
+            "familywise95_interval": [
+              -0.36338999930718846,
+              -0.11617263285906804
+            ],
+            "interval": [
+              -0.3414915182861722,
+              -0.1378088746169144
+            ]
+          },
+          "sought-none": {
+            "difference": 0.25925318324646973,
+            "familywise95_interval": [
+              0.14606039087132844,
+              0.3775392762719162
+            ],
+            "interval": [
+              0.16554533793196433,
+              0.35645677680914295
+            ]
+          }
+        },
+        "n": 1133
+      },
+      "Aug 26-31": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.2816533111504037,
+              0.6067440886314801
+            ],
+            "n": 32,
+            "rate": 0.4375,
+            "retained": 14
+          },
+          "none": {
+            "interval": [
+              0.08477195049025579,
+              0.18673398851834241
+            ],
+            "n": 165,
+            "rate": 0.12727272727272726,
+            "retained": 21
+          },
+          "sought": {
+            "interval": [
+              0.36275903534255044,
+              0.7685810871754575
+            ],
+            "n": 19,
+            "rate": 0.5789473684210527,
+            "retained": 11
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.31022727272727274,
+            "familywise95_interval": [
+              0.11151510103486309,
+              0.5193150243783012
+            ],
+            "interval": [
+              0.14342250057041214,
+              0.4847262055716135
+            ]
+          },
+          "door-sought": {
+            "difference": -0.14144736842105265,
+            "familywise95_interval": [
+              -0.42836599681645265,
+              0.18584093203871532
+            ],
+            "interval": [
+              -0.3869043661090542,
+              0.13310855829691443
+            ]
+          },
+          "sought-none": {
+            "difference": 0.4516746411483254,
+            "familywise95_interval": [
+              0.18431110570321318,
+              0.6773272247806261
+            ],
+            "interval": [
+              0.22745814543897597,
+              0.6460126541970806
+            ]
+          }
+        },
+        "n": 216
+      }
+    },
+    "replicate_prior_windows": {
+      "2026-08-31T00:30:00Z": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.17816371380446128,
+              0.26538608368449806
+            ],
+            "n": 343,
+            "rate": 0.21865889212827988,
+            "retained": 75
+          },
+          "none": {
+            "interval": [
+              0.14093883862788514,
+              0.18806286932513877
+            ],
+            "n": 944,
+            "rate": 0.163135593220339,
+            "retained": 154
+          },
+          "sought": {
+            "interval": [
+              0.3819068047183386,
+              0.5431824712372215
+            ],
+            "n": 143,
+            "rate": 0.46153846153846156,
+            "retained": 66
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.05552329890794089,
+            "familywise95_interval": [
+              -0.0019896445283649963,
+              0.1192216675912247
+            ],
+            "interval": [
+              0.007970921875001827,
+              0.10725458871564941
+            ]
+          },
+          "door-sought": {
+            "difference": -0.24287956941018168,
+            "familywise95_interval": [
+              -0.3534667468982747,
+              -0.13048276686802418
+            ],
+            "interval": [
+              -0.3340146547899029,
+              -0.15055064003997104
+            ]
+          },
+          "sought-none": {
+            "difference": 0.29840286831812257,
+            "familywise95_interval": [
+              0.19721110534553765,
+              0.40129115242659563
+            ],
+            "interval": [
+              0.21496085335010567,
+              0.3830104343753543
+            ]
+          }
+        },
+        "n": 1430
+      },
+      "2026-08-31T04:46:28.333Z": {
+        "arms": {
+          "door": {
+            "interval": [
+              0.17611587156913217,
+              0.26183607292090405
+            ],
+            "n": 352,
+            "rate": 0.2159090909090909,
+            "retained": 76
+          },
+          "none": {
+            "interval": [
+              0.14078789123980384,
+              0.1878670762700253
+            ],
+            "n": 945,
+            "rate": 0.16296296296296298,
+            "retained": 154
+          },
+          "sought": {
+            "interval": [
+              0.3819068047183386,
+              0.5431824712372215
+            ],
+            "n": 143,
+            "rate": 0.46153846153846156,
+            "retained": 66
+          }
+        },
+        "differences": {
+          "door-none": {
+            "difference": 0.052946127946127935,
+            "familywise95_interval": [
+              -0.0038438801789252713,
+              0.11574113689047683
+            ],
+            "interval": [
+              0.00600238326114285,
+              0.10394633855981716
+            ]
+          },
+          "door-sought": {
+            "difference": -0.24562937062937065,
+            "familywise95_interval": [
+              -0.35585024505535656,
+              -0.13373578406733155
+            ],
+            "interval": [
+              -0.33645472295530043,
+              -0.15370283232496562
+            ]
+          },
+          "sought-none": {
+            "difference": 0.2985754985754986,
+            "familywise95_interval": [
+              0.1973923877358445,
+              0.40145696673269093
+            ],
+            "interval": [
+              0.21514040028030368,
+              0.3831773787296563
+            ]
+          }
+        },
+        "n": 1440
+      }
+    }
+  },
+  "timing": {
+    "door": {
+      "bind_after_first_retained_write": 0,
+      "bind_at_or_after_window_end": 0,
+      "bind_during_window": 0,
+      "n": 343
+    },
+    "none": {
+      "bind_after_first_retained_write": 0,
+      "bind_at_or_after_window_end": 0,
+      "bind_during_window": 0,
+      "n": 944
+    },
+    "pre_window_transitions": [
+      {
+        "n": 343,
+        "pre_window": "door",
+        "snapshot": "door"
+      },
+      {
+        "n": 944,
+        "pre_window": "none",
+        "snapshot": "none"
+      },
+      {
+        "n": 7,
+        "pre_window": "none",
+        "snapshot": "sought"
+      },
+      {
+        "n": 136,
+        "pre_window": "sought",
+        "snapshot": "sought"
+      }
+    ],
+    "sought": {
+      "bind_after_first_retained_write": 6,
+      "bind_at_or_after_window_end": 3,
+      "bind_during_window": 4,
+      "n": 143
+    }
+  }
+}

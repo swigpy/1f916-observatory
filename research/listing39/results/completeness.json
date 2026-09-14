@@ -1,0 +1,154 @@
+{
+  "all_totals_reconciled": true,
+  "changes": {
+    "collection_end": "2026-09-14T07:02:48.098Z",
+    "collection_start": "2026-09-14T06:59:44.622Z",
+    "has_more_final": false,
+    "mode": "lossless ID snapshot, both streams initialized from zero",
+    "pages": 121,
+    "rows_are_metadata_projections": true
+  },
+  "citizens": {
+    "collection_end": "2026-09-14T07:00:09.045Z",
+    "collection_start": "2026-09-14T06:59:43.338Z",
+    "cursor_type": "timestamp",
+    "duplicate_registration_timestamps": 0,
+    "first_total": 2471,
+    "has_more_final": false,
+    "last_total": 2471,
+    "pages": 3,
+    "rows": 2471,
+    "totals_changed": false,
+    "unique_ids": 2471
+  },
+  "cohort": {
+    "citizens_with_writes_before_registration": 0,
+    "n": 1430,
+    "negative_delay_count": 0,
+    "outcome_window_end_max": "2026-09-13T22:08:51.074Z",
+    "retained": 295,
+    "retained_only_by_moderated_rows": 0,
+    "unbound_by_observation": 944
+  },
+  "cohort_bind_changes_after_observation": [],
+  "comments": {
+    "gaps": [
+      1,
+      2,
+      3
+    ],
+    "has_more_final": false,
+    "matches_reported_total": true,
+    "missing_attribution": 0,
+    "moderation_states": {
+      "collapsed": 369,
+      "removed": 11,
+      "visible": 59562,
+      "withdrawn": 75
+    },
+    "pages_with_rows": 121,
+    "rows": 60017,
+    "snapshot_max_id": 60020,
+    "stats_after": 60017,
+    "stats_before": 60017,
+    "unique_ids": 60017
+  },
+  "early_boundary_citizens": [
+    {
+      "citizen_id": 632,
+      "created_at": 1786570411925,
+      "handle": "kit-test-0411",
+      "model": "kit-verification"
+    }
+  ],
+  "events": {
+    "collection_end": "2026-09-14T07:00:30.351Z",
+    "collection_start": "2026-09-14T06:59:43.783Z",
+    "cursor_type": "id",
+    "first_total": 13977,
+    "has_more_final": false,
+    "last_total": 13977,
+    "latest_event_id": 13977,
+    "pages": 28,
+    "rows": 13977,
+    "totals_by_kind": {
+      "attestation": 53,
+      "binding-lapsed": 3,
+      "binding-verified": 16,
+      "flag-disposition": 771,
+      "grant": 6,
+      "grant-proposal": 22,
+      "key-bind": 715,
+      "key-decline": 69,
+      "key-revoke": 11,
+      "key_rotation": 67,
+      "listing": 40,
+      "listing-award": 9,
+      "listing-award-transition": 7,
+      "listing-submission": 428,
+      "listing-withdrawn": 11,
+      "memory.seal": 5543,
+      "memory.seal-check": 5150,
+      "model_correction": 139,
+      "moderation": 471,
+      "payout-binding": 295,
+      "payout-receipt": 13,
+      "payout-wallet": 41,
+      "withdrawal": 91,
+      "witness-register": 6
+    },
+    "totals_changed": false,
+    "unique_ids": 13977
+  },
+  "gap_witnesses": [
+    {
+      "citizen_id": 715,
+      "delay_ms": 18424,
+      "handle": "sphere",
+      "in_primary_cohort": true,
+      "registration_utc": "2026-08-19T11:11:18.187Z"
+    },
+    {
+      "citizen_id": 908,
+      "delay_ms": 1203,
+      "handle": "readback",
+      "in_primary_cohort": true,
+      "registration_utc": "2026-08-22T03:11:05.091Z"
+    },
+    {
+      "citizen_id": 2239,
+      "delay_ms": 13911,
+      "handle": "tessera",
+      "in_primary_cohort": false,
+      "registration_utc": "2026-09-07T05:22:05.368Z"
+    }
+  ],
+  "key_bind_join": {
+    "distinct_citizens_all_collected": 702,
+    "distinct_citizens_by_observation": 701,
+    "rows": 715,
+    "unjoined": 0
+  },
+  "posts": {
+    "gaps": [
+      2,
+      27
+    ],
+    "has_more_final": false,
+    "matches_reported_total": true,
+    "missing_attribution": 0,
+    "moderation_states": {
+      "collapsed": 17,
+      "removed": 6,
+      "visible": 5234,
+      "withdrawn": 16
+    },
+    "pages_with_rows": 27,
+    "rows": 5273,
+    "snapshot_max_id": 5275,
+    "stats_after": 5273,
+    "stats_before": 5273,
+    "unique_ids": 5273
+  },
+  "writing_join_unmatched": 0
+}
