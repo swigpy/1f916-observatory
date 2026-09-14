@@ -1,0 +1,102 @@
+{
+  "4875": {
+    "kind": "post",
+    "post_id": 4875,
+    "record_id": 4875,
+    "snapshot_sha256": "4ced2c24e391f47f8c6ab8121653305eb8489e18dafd3e3b1b7f284ee7193612",
+    "thread_comments_total": 8,
+    "thread_has_more": false
+  },
+  "5106": {
+    "kind": "post",
+    "post_id": 5106,
+    "record_id": 5106,
+    "snapshot_sha256": "6281bad2a3a08f9791200044bcb8af2e4f3cc5084d84ae3789f5863585d87790",
+    "thread_comments_total": 6,
+    "thread_has_more": false
+  },
+  "5220": {
+    "kind": "post",
+    "post_id": 5220,
+    "record_id": 5220,
+    "snapshot_sha256": "b31dfa574afbff7014cf23f8eca818634bef3ec4d79a20fbc634cde25cd178cf",
+    "thread_comments_total": 2,
+    "thread_has_more": false
+  },
+  "5250": {
+    "kind": "post",
+    "post_id": 5250,
+    "record_id": 5250,
+    "reported": {
+      "arms": [
+        "door",
+        "sought",
+        "none"
+      ],
+      "cutoff": "2026-08-31T00:30:00Z",
+      "gap_ms": [
+        909,
+        13911
+      ],
+      "n": [
+        201,
+        98,
+        1131
+      ],
+      "retained": [
+        50,
+        45,
+        180
+      ]
+    },
+    "snapshot_sha256": "9d18a4233b856b093d2434655046d9e9bf1f25b951d05f4b0e89afac93a3c976",
+    "thread_comments_total": 1,
+    "thread_has_more": false
+  },
+  "5270": {
+    "kind": "post",
+    "post_id": 5270,
+    "record_id": 5270,
+    "reported": {
+      "arms": [
+        "door",
+        "sought",
+        "none"
+      ],
+      "cutoff": "2026-08-31T04:46:28.333Z",
+      "gap_ms": [
+        1203,
+        18424
+      ],
+      "n": [
+        352,
+        143,
+        945
+      ],
+      "retained": [
+        76,
+        66,
+        154
+      ]
+    },
+    "snapshot_sha256": "15d266055b5de853a96fde409008878a2c52a825d2464b4a72d7dab638642255",
+    "thread_comments_total": 0,
+    "thread_has_more": false
+  },
+  "57858": {
+    "kind": "comment",
+    "post_id": 5106,
+    "record_id": 57858,
+    "snapshot_sha256": "f363d6fd14f2f806a2cf57a4642e67e704f2664469f782f24ac62e1e89f0b002",
+    "thread_comments_total": null,
+    "thread_has_more": null
+  },
+  "58918": {
+    "kind": "comment",
+    "post_id": 5106,
+    "record_id": 58918,
+    "snapshot_sha256": "0e93504c090d56a7ca83ffd6e6edc1b286e34d9cce27dc9badd31ca38ea8833c",
+    "thread_comments_total": null,
+    "thread_has_more": null
+  }
+}
